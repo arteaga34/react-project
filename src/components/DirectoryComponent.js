@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from "reactstrap";
+import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
 import CampsiteInfoComponent from "./CampsiteInfoComponent";
 
 export default class Directory extends Component {
@@ -17,7 +17,7 @@ export default class Directory extends Component {
 	render() {
 		const directory = this.props.campsites.map((campsite) => {
 			return (
-				<div key={campsite.id} className="md-5 m-1">
+				<div key={campsite.id} className="col-md-5 m-1">
 					<Card onClick={() => this.onCampsiteSelect(campsite)}>
 						<CardImg width="100%" src={campsite.image} alt={campsite.name} />
 						<CardImgOverlay>

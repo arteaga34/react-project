@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from "reactstrap";
+import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 
 export class CampsiteInfoComponent extends Component {
 	renderCampsite(campsite) {
@@ -23,7 +23,7 @@ export class CampsiteInfoComponent extends Component {
 					<h4>Comments</h4>
 					{comments.map((comment) => {
 						return (
-							<div>
+							<div key={comment.id}>
 								<p>{comment.text}</p>
 								<p>
 									{comment.author}{" "}
@@ -43,13 +43,13 @@ export class CampsiteInfoComponent extends Component {
 
 	render() {
 		const { campsite } = this.props;
-		console.log(this.props);
 		return (
 			<div>
 				<div>
 					{campsite ? (
 						<div className="row">
-							{this.renderCampsite(campsite)} {this.renderComments(campsite.comments)}
+							{this.renderCampsite(campsite)}
+							{this.renderComments(campsite.comments)}
 						</div>
 					) : (
 						<div></div>
