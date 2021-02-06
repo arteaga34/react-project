@@ -45,16 +45,16 @@ export class CampsiteInfoComponent extends Component {
 		const { campsite } = this.props;
 		return (
 			<div>
-				<div>
-					{campsite ? (
+				{campsite ? (
+					<div className="container">
 						<div className="row">
 							{this.renderCampsite(campsite)}
 							{this.renderComments(campsite.comments)}
 						</div>
-					) : (
-						<div></div>
-					)}
-				</div>
+					</div>
+				) : (
+					<div></div>
+				)}
 			</div>
 		);
 	}
